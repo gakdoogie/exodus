@@ -16,15 +16,32 @@
   <div id="blog-content">Loading transmission...</div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    // Grab the empty skeleton from the page
     const blogContainer = document.getElementById('blog-content');
-    // Send the courier to get the text file
-    fetch('logs/first-post.md')
-    .then(response => response.text()) // Open the envelope and read the text
-    .then(rawText => {
-    // Hand the raw text to the translator, and inject the HTML into the skeleton
-    blogContainer.innerHTML = marked.parse(rawText);
-    });
-  </script>
+      // We wrap our logic in an "async" function so we can use the "await" command
+      async function loadAllLogs() {
+        // 1. Fetch the manifest and wait for it to arrive
+        const manifestResponse = await fetch('logs/manifest.json');
+        // 2. Translate the JSON text into an actual JavaScript Array
+        const fileList = await manifestResponse.json();
+        // 3. Clear the "Loading transmission..." text
+        blogContainer.innerHTML = '';
+        // 4. Loop through every file in the list
+        for (const fileName of fileList) {
+          // Fetch the specific markdown file
+          const postResponse = await fetch(`logs/${fileName}`);
+          const rawText = await postResponse.text();
+          // Create a temporary invisible box (a div) for this specific post
+          const postBox = document.createElement('div');         
+          // Translate the Markdown to HTML and put it in the box
+          postBox.innerHTML = marked.parse(rawText);         
+          // Add a cool horizontal line at the bottom of the post to separate it from the next one
+          postBox.innerHTML += '<hr style="border-color: #333; margin: 40px 0;">';
+          // Physically append the finished box to the screen
+          blogContainer.appendChild(postBox);
+        }
+      }
+      // Execute the function!
+      loadAllLogs();
+    </script>
 </body>
 </html>
