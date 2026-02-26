@@ -1,0 +1,25 @@
+## [001 Stumbling across a cool idea]
+**Date:** 02/26/2026
+
+OK so this is probably one of those more anti-climatic starts to what could be a really ambitious project that manifests itself 20 years from now. I'm not sure if I could have started this project more elegantly, but I think I'll thank myself later for just getting my butt off the ground and starting.
+
+### What is GaTE?
+GaTE is the (current) acronym that stands for **Ga**te **T**o **E**xodus. Ooo, chills. Gives me Evangelion vibes. Never watched it but the acronym sounds like something that's up that kind of alley. 
+
+GaTE is my attempt of creating a 1:1 3D digital twin of the Observable Universe, monitoring everything that goes on in our Universe in (hopefully) near real-time. And when I say everything, boy do I mean everything. We're talking the current location of the Earth with respect to our Sun based on the season, the position of the International Space Station (ISS) that's currently orbiting our planet (Earth), the upcoming rocket launch of NASA's Artemis II, varying distributions of space radiation across our solar system, solar flares erupting from the Sun, and much more. 
+
+In the future, I plan to implement a sort of "way-back machine" that can capture past events as well. Wouldn't it be sick to watch the past Apollo missions in real-time unfold in front of your screen, or see how Voyager II travelled outside the Solar System past the Oort Cloud and our friendly neighborhood gas giants? 
+
+Beyond GaTE (hopefully) being able to capture and record both present and past planetary events respectively, I'd like GaTE to provide users with a global snapshot of current events unfolding on a given planet (i.e. civil war, rising trends, climate change, etc.). Unfortunately, there's not a lot of options to pick from in our Solar System if one wants the tea on geopolitics (for now). I think it would be really cool if GaTE can show users what's going on in each continent of Earth. Unlike our current US news media that filters specific topics for American audiences, I want GaTE to provide users with a more holistic view on our country and other countries as well. 
+
+So what, am I just making a glorified news media platform with cool astronomy facts sprinkled in here and there? Gosh I hope not. I didn't grow up wanting to become a journalist or anything like that, but I do personally believe giving users an objective holistic view on ongoing events on any given planetary body and residing solar system supports my main big picture vision for GaTE.
+
+*I want future users to use GaTE as their sole navigational tool when trekking the cosmos.*
+
+Whether Bob wants to sunbathe on the rings of Saturn for the weekend, or FedEx needs to ship an Amazon return from Io back to Earth, or Jane Doe is completing an expedition mapping a specific region of Triton's surface, they (i.e. future us) will need some sort of aide to get us from point A to point B in deep space. Using Google Maps isn't exactly going to help (man, I wonder how Waymo is going to evolve in year 3000). Future space-farers will need to plan safe and efficient routes, equipped with updated situational awareness of the space environment they will be operating within. 
+
+#### But why do I want to make GaTE so much?
+
+Space is boundless, and I dream to shake this world down to its core by posing a forgotten question: why can't we be explorers once again? I despise the meme saying "Too late to explore the Earth, too early to explore the cosmos ..." because it implies a defeatist mentality. Who said it's too early to explore the cosmos? We're at the cusp of a golden age of space exploration, much in thanks to rapid innovation by NewSpace companies like SpaceX, Astrobotic, and much more. Exploring in this day and age feels out of reach for the mass majority of individuals and reserved for a few select individuals. The average individual in a 1st world country is now stuck in a pre-made loop: go to school, get a job, find a partner, settle down, make a family, set up their children for success, and kick the bucket. But why? Why is this loop now the meaning of our lives? Who said that this path is what's best for ourselves? Sure, a growing population ensures humanity's survival in the far future, but shouldn't we be able to start families using a wide array of opportunities?
+
+I can't hop on a X-wing tomorrow morning and start an expedition in the Andromeda Galaxy. But I sure can use the tech made possible by smart folks today to nudge us all down a future that entices a bit more hope in all of us. I don't mean to make GaTE my magnum opus by any means. Like I said in the beginning, this whole project had an anti-climatic start. I sorta stumbled into this project after having a cool idea inspired by other cool ideas I had in the past with a dash of good immediate circumstances. I never really made anything substantial in the past, nor anything I can pin my name with great pride. Let's see how this all pans out together, shall we? 

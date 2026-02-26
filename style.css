@@ -1,3 +1,25 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body { background-color: #000000; overflow: hidden; }
+
 #orbitalCanvas { display: block; width: 100vw; height: 100vh; }
+
+/* Target the specific ID we gave the hyperlink */
+#logLink {
+    position: absolute; 
+    top: 20px;
+    right: 30px;
+    color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
+    text-decoration: none; /* Removes the ugly default underline */
+    font-family: ui-monospace; /* Gives it a cool coding/terminal vibe */
+    z-index: 10; 
+}
+
+/* Make it light up pure white when you hover over it with your mouse */
+#logLink:hover {
+    color: #ffffff;
+}
+
+#blog-headline {
+    font-family: 'Tahoma', sans-serif;
+}

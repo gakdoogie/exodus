@@ -1,0 +1,30 @@
+<!--Formatting html files against Google standards is tough lol-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dev Dots - GaTE</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body style="color: white; padding: 50px; font-family: sans-serif;">
+  <a href="index.html" style="color: #0077BE;">Back to GaTE</a>
+  <br>
+  <br>
+  <h1 id="blog-headline">Dev Dots on GaTE</h1>
+  <p><i>i.e. the developer's thoughts on Gate To Exodus...</i></p>
+  <br>
+  <div id="blog-content">Loading transmission...</div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Grab the empty skeleton from the page
+    const blogContainer = document.getElementById('blog-content');
+    // Send the courier to get the text file
+    fetch('logs/first-post.md')
+    .then(response => response.text()) // Open the envelope and read the text
+    .then(rawText => {
+    // Hand the raw text to the translator, and inject the HTML into the skeleton
+    blogContainer.innerHTML = marked.parse(rawText);
+    });
+  </script>
+</body>
+</html>
