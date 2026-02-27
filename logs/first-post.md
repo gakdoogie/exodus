@@ -6,9 +6,7 @@ OK so this is probably one of those more anti-climatic starts to what could be a
 ### What is GaTE?
 GaTE is the (current) acronym that stands for **Ga**te **T**o **E**xodus. Ooo, chills. Gives me Evangelion vibes. Never watched it but the acronym sounds like something that's up that kind of alley. 
 
-
 GaTE is my attempt of creating a 1:1 3D digital twin of the Observable Universe, monitoring everything that goes on in our Universe in (hopefully) near real-time. And when I say everything, boy do I mean everything. We're talking the current location of the Earth with respect to our Sun based on the season, the position of the International Space Station (ISS) that's currently orbiting our planet (Earth), the upcoming rocket launch of NASA's Artemis II, varying distributions of space radiation across our solar system, solar flares erupting from the Sun, and much more. 
-
 
 In the future, I plan to implement a sort of "way-back machine" that can capture past events as well. Wouldn't it be sick to watch the past Apollo missions in real-time unfold in front of your screen, or see how Voyager II travelled outside the Solar System past the Oort Cloud and our friendly neighborhood gas giants? 
 

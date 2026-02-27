@@ -6,36 +6,69 @@
 
 body {
   background-color: #000000; 
-  overflow: hidden;
 }
 
 #orbitalCanvas { 
   display: block;
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
+  position: fixed; /* Keeps the canvas locked in the background */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Pushes the canvas behind everything else */
 }
 
 /* Target the specific ID we gave the hyperlink */
-#logLink {
+.nav-link {
   position: absolute; 
   top: 20px;
   right: 30px;
-  color: rgba(255, 255, 255, 0.5); /* 50% transparent white */
-  text-decoration: none; /* Removes the ugly default underline */
-  font-family: sans-serif; /* Gives it a cool coding/terminal vibe */
+  color: rgba(255, 255, 255, 0.5); 
+  text-decoration: none; 
+  font-family: monospace; 
   z-index: 10; 
+  transition: color 0.3s ease; /* Adds a smooth fade-in effect when hovered */
 }
 
-/* Make it light up pure white when you hover over it with your mouse */
-#logLink:hover {
-    color: #ffffff;
+.nav-link:hover {
+  color: #ffffff;
 }
 
-#blog-headline {
-    font-family: 'Tahoma', sans-serif;
+/* The main container holding your text */
+#blog-content {
+  max-width: 700px; /* STRICT RULE: Never let text stretch across the whole monitor */
+  margin: 0 auto; /* Magically centers the 700px column in the middle of the screen */
+  padding-top: 80px;
+  color: #d1d5db; /* A soft, premium light gray (easier on the eyes than pure white) */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
 }
 
+/* All headings inside the blog */
+#blog-content h1, #blog-content h2 {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.5px; /* Pulls the letters slightly closer together for a sleek look */
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+/* The title of the post specifically */
+#blog-content h1 {
+  font-size: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* A subtle divider line */
+  padding-bottom: 15px;
+}
+
+/* All paragraphs inside the blog */
 #blog-content p {
-    margin-bottom: 20px;
-    line-height: 1.6;
+  margin-bottom: 24px;
+  line-height: 1.7; /* Massive breathing room between lines of text */
+}
+
+/* All lists inside the blog */
+#blog-content ul {
+  margin-bottom: 24px;
+  padding-left: 20px;
+  line-height: 1.7;
 }
