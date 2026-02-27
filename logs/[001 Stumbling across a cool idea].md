@@ -1,5 +1,5 @@
 ## [001 Stumbling across a cool idea]
-**Date:** 02/26/2026
+**Date:** 02/25/2026
 
 OK so this is probably one of those more anti-climatic starts to what could be a really ambitious project that manifests itself 20 years from now. I'm not sure if I could have started this project more elegantly, but I think I'll thank myself later for just getting my butt off the ground and starting.
 
@@ -22,4 +22,6 @@ Whether Bob wants to sunbathe on the rings of Saturn for the weekend, or FedEx n
 
 Space is boundless, and I dream to shake this world down to its core by posing a forgotten question: why can't we be explorers once again? I despise the meme saying "Too late to explore the Earth, too early to explore the cosmos ..." because it implies a defeatist mentality. Who said it's too early to explore the cosmos? We're at the cusp of a golden age of space exploration, much in thanks to rapid innovation by NewSpace companies like SpaceX, Astrobotic, and much more. Exploring in this day and age feels out of reach for the mass majority of individuals and reserved for a few select individuals. The average individual in a 1st world country is now stuck in a pre-made loop: go to school, get a job, find a partner, settle down, make a family, set up their children for success, and kick the bucket. But why? Why is this loop now the meaning of our lives? Who said that this path is what's best for ourselves? Sure, a growing population ensures humanity's survival in the far future, but shouldn't we be able to start families using a wide array of opportunities?
 
-I can't hop on a X-wing tomorrow morning and start an expedition in the Andromeda Galaxy. But I sure can use the tech made possible by smart folks today to nudge us all down a future that entices a bit more hope in all of us. I don't mean to make GaTE my magnum opus by any means. Like I said in the beginning, this whole project had an anti-climatic start. I sorta stumbled into this project after having a cool idea inspired by other cool ideas I had in the past with a dash of good immediate circumstances. I never really made anything substantial in the past, nor anything I can pin my name with great pride. Let's see how this all pans out together, shall we? 
+I can't hop on a X-wing tomorrow morning and start an expedition in the Andromeda Galaxy. But I sure can use the tech made possible by smart folks today to nudge us all down a future that entices a bit more hope in all of us. I don't mean to make GaTE my magnum opus by any means. Like I said in the beginning, this whole project had an anti-climatic start. I sorta stumbled into this project after having a cool idea inspired by other cool ideas I had in the past with a dash of good immediate circumstances. I never really made anything substantial in the past, nor anything I can pin my name onto with great pride. So let's see how this all pans out together, shall we? 
+
+...
