@@ -4,6 +4,38 @@
   box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Turns instant jumps into a buttery smooth scroll */
+}
+
+/* The Sidebar Container 
+   We use 'fixed' so it stays on the screen even when you scroll down 
+*/
+#toc-sidebar {
+  position: fixed;
+  top: 120px;
+  right: 5%; /* Pushes it into the right-hand white space */
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spaces out the links */
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+}
+
+/* The Sidebar Links */
+#toc-sidebar a {
+  color: #71717a;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#toc-sidebar a:hover {
+  color: #ffffff;
+}
+
 body {
   background-color: #000000; 
 }
@@ -71,4 +103,43 @@ body {
   margin-bottom: 24px;
   padding-left: 20px;
   line-height: 1.7;
+}
+
+/* The container handles the outside spacing now */
+#blog-content figure {
+    margin: 40px 0; 
+}
+
+/* The image just shapes itself to the container, with zero bottom margin */
+#blog-content figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin: 0; /* This guarantees the caption hugs the image tightly! */
+  display: block; /* Removes a microscopic hidden gap browsers put under images */
+}
+
+/* The Magazine Caption Aesthetic */
+#blog-content figcaption {
+  margin-top: 12px;  /* Just a tiny, calculated gap between the image and text */
+  font-size: 14px; /* Noticeably smaller than your 18px paragraph text */
+  color: #71717a; /* A darker, muted gray to push it to the background */
+  text-align: center; /* Centers the caption cleanly under the image */
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Magazine-style inline hyperlinks */
+#blog-content a {
+  color: #e2e8f0; /* A very bright, crisp gray/white to stand out from the text */
+  text-decoration: none; /* Strip away the ugly default underline */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* A subtle, classy custom underline */
+  transition: all 0.2s ease; /* Smooth animation */
+}
+
+/* Make it glow slightly when hovered */
+#blog-content a:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff; 
 }
