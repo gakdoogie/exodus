@@ -1,3 +1,18 @@
+/* --- GaTE DESIGN SYSTEM (THE ART BIBLE) --- */
+:root {
+  /* The 90% Monochromatic Void */
+  --bg-void: #09090b;
+  --text-primary: #ffffff;
+  --text-muted: #a1a1aa; /* Stark light gray for structure/borders */
+
+  /* The 10% Toxic Accent */
+  --accent-toxic: #CCFF00; 
+
+  /* Typography */
+  --font-reading: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-ui: "JetBrains Mono", monospace;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,36 +23,10 @@ html {
     scroll-behavior: smooth; /* Turns instant jumps into a buttery smooth scroll */
 }
 
-/* The Sidebar Container 
-   We use 'fixed' so it stays on the screen even when you scroll down 
-*/
-#toc-sidebar {
-  position: fixed;
-  top: 120px;
-  right: 5%; /* Pushes it into the right-hand white space */
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Spaces out the links */
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding-left: 20px;
-}
-
-/* The Sidebar Links */
-#toc-sidebar a {
-  color: #71717a;
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-#toc-sidebar a:hover {
-  color: #ffffff;
-}
-
 body {
-  background-color: #000000; 
+  background-color: transparent;
+  color:white;
+  font-family: sans-serif;
 }
 
 #orbitalCanvas { 
@@ -57,7 +46,7 @@ body {
   right: 30px;
   color: rgba(255, 255, 255, 0.5); 
   text-decoration: none; 
-  font-family: monospace; 
+  font-family: var(--font-ui); 
   z-index: 10; 
   transition: color 0.3s ease; /* Adds a smooth fade-in effect when hovered */
 }
@@ -66,13 +55,29 @@ body {
   color: #ffffff;
 }
 
+.devlog-page {
+  background-color: var(--bg-void);
+  padding: 50px;
+} 
+
+#blog-headline {
+  font-family: var(--font-reading);
+  letter-spacing: -0.5px;
+  font-size: 36px;
+}
+
+#blog-caption {
+  font-family: var(--font-reading);
+  font-size:18px;
+}
+
 /* The main container holding your text */
 #blog-content {
   max-width: 700px; /* STRICT RULE: Never let text stretch across the whole monitor */
   margin: 0 auto; /* Magically centers the 700px column in the middle of the screen */
   padding-top: 80px;
   color: #d1d5db; /* A soft, premium light gray (easier on the eyes than pure white) */
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-reading);
   font-size: 18px;
 }
 
@@ -126,7 +131,7 @@ body {
   font-size: 14px; /* Noticeably smaller than your 18px paragraph text */
   color: #71717a; /* A darker, muted gray to push it to the background */
   text-align: center; /* Centers the caption cleanly under the image */
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-ui);
   letter-spacing: 0.5px;
 }
 
@@ -142,4 +147,39 @@ body {
 #blog-content a:hover {
   color: #ffffff;
   border-bottom: 1px solid #ffffff; 
+}
+
+/* The Sidebar Container 
+   We use 'fixed' so it stays on the screen even when you scroll down 
+*/
+#toc-sidebar {
+  position: fixed;
+  top: 120px;
+  right: 5%; /* Pushes it into the right-hand white space */
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spaces out the links */
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+}
+
+/* The Sidebar Links */
+#toc-sidebar a {
+  color: #71717a;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#toc-sidebar a:hover {
+  color: #ffffff;
+}
+
+#toc-sidebar .outside-hyperlink {
+  color: var(--accent-toxic);
+  font-weight: bold;
+  padding-bottom: 15px; /* Gives it breathing room */
+  margin-bottom: 5px; /* Pushes the generated TOC links down slightly */
 }

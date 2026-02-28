@@ -1,49 +1,80 @@
-const canvas = document.getElementById('orbitalCanvas');
-const ctx = canvas.getContext('2d');
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Just to prove it works:
+console.log("Three.js is locked and loaded:", THREE);
 
-// This variable will act as our timeline. It starts at 0.
-let timeAngle = 0; 
+// 1. Create the Scene (The Void)
+const scene = new THREE.Scene();
 
-function animateDashboard() {
-    // 1. WIPE THE BOARD CLEAN EVERY FRAME
-    // If you don't do this, the Earth will smear across the screen like a paint brush!
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+// 2. Create the Camera (The Eyeballs) 
+// Arguments: Field of View, Aspect Ratio, Near Clipping Plane, Far Clipping Plane
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
+// Move the camera back slightly so we aren't inside the objects we create
+camera.position.z = 30;
 
-    // 2. DRAW THE SUN
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, 50, 0, Math.PI * 2);
-    ctx.fillStyle = '#FFCC00'; // Sun Yellow
-    ctx.fill();
+// 3. Create the Renderer (The Engine)
+// We tell it to use your existing canvas! 
+const canvas = document.querySelector('#orbitalCanvas'); // Make sure your HTML canvas has id="bg"
+const renderer = new THREE.WebGLRenderer({ canvas: canvas });
 
-    // 3. CALCULATE EARTH'S ORBIT
-    const earthOrbitRadius = 250; // How far the Earth is from the Sun
-    
-    // Trigonometry: Cosine calculates the X position, Sine calculates the Y position
-    const earthX = centerX + Math.cos(timeAngle) * earthOrbitRadius;
-    const earthY = centerY + Math.sin(timeAngle) * earthOrbitRadius;
+renderer.setPixelRatio(window.devicePixelRatio); // Makes it look sharp on Retina/mobile screens
+renderer.setSize(window.innerWidth, window.innerHeight); // Makes it fill the screen
 
-    // 4. DRAW THE EARTH
-    ctx.beginPath();
-    ctx.arc(earthX, earthY, 15, 0, Math.PI * 2); // Earth is smaller (radius 15)
-    ctx.fillStyle = '#0077BE'; // Ocean Blue
-    ctx.fill();
+// This listens to your mouse/touch on the canvas and moves the camera!
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
 
-    // 5. MOVE TIME FORWARD
-    // Increase the angle slightly for the next frame. 
-    // Make this number bigger to speed up the orbit, smaller to slow it down.
-    timeAngle += 0.01;
+// 1. THE CHUNKY GEOMETRY
+// We use an Icosahedron (a 20-sided shape). The '1' means low detail, keeping it blocky.
+const planetGeo = new THREE.IcosahedronGeometry(2, 3);
 
-    // 6. THE INFINITE LOOP
-    // This built-in browser function tells the screen to run this exact function 
-    // again right before the monitor refreshes (usually 60 times a second).
-    requestAnimationFrame(animateDashboard);
+// 2. THE BRUTALIST MATERIAL (FLAT SHADING)
+// A crushing dark gray. 'flatShading: true' is the magic command that makes the polygons sharp.
+const planetMat = new THREE.MeshStandardMaterial({
+    color: 0x1a1a1a, 
+    flatShading: true,
+    roughness: 0.8 // Makes it look matte, like manufactured metal
+});
+const planet = new THREE.Mesh(planetGeo, planetMat);
+scene.add(planet);
+
+// 3. THE NEON WIREFRAME OVERLAY
+// We create a striking cyber-yellow wireframe using the exact same geometry.
+const wireMat = new THREE.MeshBasicMaterial({
+    color: 0xcfff04, // A stark, toxic neon yellow
+    wireframe: true,
+    transparent: true,
+    opacity: 0.2 // Keeps it from being too blinding
+});
+
+const wireframe = new THREE.Mesh(planetGeo, wireMat);
+// We scale it up by 1% so it perfectly hovers just above the dark metal surface
+wireframe.scale.set(1.01, 1.01, 1.01); 
+
+// By adding the wireframe to the planet (instead of the scene), they are locked together!
+planet.add(wireframe);
+
+// THE CINEMATIC LIGHTING
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.2); // Very low base light
+scene.add(ambientLight);
+
+const dirLight = new THREE.DirectionalLight(0xffffff, 3); // Overblown, harsh white light
+dirLight.position.set(5, 5, 2); // Angled from the top right
+scene.add(dirLight);
+
+// 5. The Game Loop (Animation)
+// This tells the browser to take a photo 60 times a second
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Update the orbital controls every frame
+  controls.update();
+
+  renderer.render(scene, camera);
 }
 
-// Kickstart the infinite loop
-animateDashboard();
+// Start the loop!
+animate();
